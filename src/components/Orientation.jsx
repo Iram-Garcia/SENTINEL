@@ -111,40 +111,43 @@ function Orientation({ rotation }) {
     return (
         <div className="flex-1 min-w-0" data-swapy-slot="2">
             <div ref={containerRef} data-swapy-item="b" className="border-2 border-[#201F1F] rounded-md flex flex-col h-full w-full overflow-hidden backdrop-blur-sm">
-                <div className="w-full bg-[#09090B] flex items-center py-1 px-2 border-b-2 border-[#201F1F] drag-handle cursor-move select-none" data-swapy-handle>
-                    <p className="text-[#9CA3AF] text-lg">Orientation</p>
+                <div className="w-full bg-red-700 flex items-center py-1 px-2 border-b-2 border-[#201F1F] drag-handle cursor-move select-none" data-swapy-handle>
+                    <p className="text-white text-lg">Orientation</p>
                 </div>
                 <div className="flex-1 overflow-hidden flex relative">
-                    <div className="absolute inset-0 h-full w-full bg-[radial-gradient(#201F1F_1px,transparent_1px)] [background-size:9px_9px]" />
+                    <div className="absolute inset-0 h-full w-full bg-stone-50  [background-size:9px_9px]" />
                     {dimensions.width > 0 && dimensions.height > 0 && (
                         <Canvas
-                            style={{
-                                width: dimensions.width,
-                                height: dimensions.height,
-                                position: 'absolute',
-                                left: 0,
-                                top: 0
-                            }}
-                            camera={{
-                                position: [4, 0, 0],
-                                fov: 50,
-                                near: 0.1,
-                                far: 1000,
-                                up: [0, 1, 0]
-                            }}
-                        >
-                            <axesHelper args={[1]} />
-                            <CanvasResizer />
-                            <ambientLight intensity={0.5} />
-                            <pointLight position={[10, 10, 10]} />
-                            <RocketModel rotation={rotation} />
-                            <OrbitControls
-                                enableZoom={true}
-                                enableRotate={true}
-                                enablePan={false}
-                                target={[0, 0, 0]}
-                            />
-                        </Canvas>
+    style={{
+        width: dimensions.width,
+        height: dimensions.height,
+        position: 'absolute',
+        left: 0,
+        top: 0
+    }}
+    camera={{
+        position: [4, 2, 4], // Adjust camera to better view the grid
+        fov: 50,
+        near: 0.1,
+        far: 1000,
+        up: [0, 1, 0]
+    }}
+>
+    <axesHelper args={[1]} />
+    <gridHelper args={[10, 10, 0x888888, 0x444444]} position={[0, 0, 0]} rotation={[0, 0, 0]} />
+    <CanvasResizer />
+    <ambientLight intensity={0.5} />
+    <pointLight position={[10, 10, 10]} />
+    <RocketModel rotation={rotation} />
+    <OrbitControls
+        enableZoom={true}
+        enableRotate={true}
+        enablePan={false}
+        target={[0, 0, 0]}
+    />
+</Canvas>
+
+
                     )}
                 </div>
             </div>

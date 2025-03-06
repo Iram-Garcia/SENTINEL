@@ -70,7 +70,7 @@ function App() {
   }, []);
 
   return (
-    <main id="main" className="w-screen h-screen bg-black flex flex-col">
+    <main id="main" className="w-screen h-screen bg-blue-950 flex flex-col">
       <StatusBar
         missionTime={latestPacket.mission_time}
         satellites={latestPacket.satellites}
