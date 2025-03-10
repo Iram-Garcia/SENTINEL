@@ -8,28 +8,28 @@ function Graphs({ velocity, acceleration, rotation }) {
 
     return (
         <div className="flex-1 min-w-0" data-swapy-slot="4">
-            <div data-swapy-item="d" className="border-2 border-[#201F1F] rounded-md flex flex-col h-full w-full overflow-hidden backdrop-blur-sm">
-                <ul className="w-full flex items-center border-b-2 border-[#201F1F] drag-handle cursor-move select-none" data-swapy-handle>
+            <div data-swapy-item="d" className="border-2 border-gray-200 rounded-md flex flex-col h-full w-full overflow-hidden backdrop-blur-sm bg-white">
+                <ul className="w-full flex items-center border-b-2 border-gray-200 drag-handle cursor-move select-none" data-swapy-handle>
                     <li>
                         <button
-                            className={cn("text-[#9CA3AF] text-lg px-3 py-1", {
-                                "bg-[#09090B]": graphActiveTab === "velocity"
+                            className={cn("text-gray-600 text-lg px-3 py-1", {
+                                "bg-gray-100": graphActiveTab === "velocity"
                             })}
                             onClick={() => setGraphActiveTab("velocity")}
                         >Velocity</button>
                     </li>
                     <li>
                         <button
-                            className={cn("text-[#9CA3AF] text-lg px-3 py-1", {
-                                "bg-[#09090B]": graphActiveTab === "acceleration"
+                            className={cn("text-gray-600 text-lg px-3 py-1", {
+                                "bg-gray-100": graphActiveTab === "acceleration"
                             })}
                             onClick={() => setGraphActiveTab("acceleration")}
                         >Acceleration</button>
                     </li>
                     <li>
                         <button
-                            className={cn("text-[#9CA3AF] text-lg px-3 py-1", {
-                                "bg-[#09090B]": graphActiveTab === "rotation"
+                            className={cn("text-gray-600 text-lg px-3 py-1", {
+                                "bg-gray-100": graphActiveTab === "rotation"
                             })}
                             onClick={() => setGraphActiveTab("rotation")}
                         >Rotation</button>

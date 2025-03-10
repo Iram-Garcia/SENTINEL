@@ -219,10 +219,10 @@ function FlightTrajectory({ points, packetRecieved, setPacketRecieved }) {
             <div
                 ref={containerRef}
                 data-swapy-item="c"
-                className="border-2 border-[#201F1F] rounded-md flex flex-col h-full w-full overflow-hidden backdrop-blur-sm"
+                className="border-2 border-gray-200 rounded-md flex flex-col h-full w-full overflow-hidden backdrop-blur-sm bg-white"
             >
-                <div className="w-full bg-[#09090B] flex items-center py-1 px-2 border-b-2 border-[#201F1F] drag-handle cursor-move select-none" data-swapy-handle>
-                    <p className="text-[#9CA3AF] text-lg">Flight Trajectory</p>
+                <div className="w-full bg-gray-100 flex items-center py-1 px-2 border-b-2 border-gray-200 drag-handle cursor-move select-none" data-swapy-handle>
+                    <p className="text-gray-700 text-lg">Flight Trajectory</p>
                 </div>
                 <div className="flex-1 overflow-hidden flex relative">
                     {dimensions.width > 0 && dimensions.height > 0 && (
